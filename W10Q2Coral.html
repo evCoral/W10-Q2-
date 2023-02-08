@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Random Letter Generator</title>
+    <script>
+      function randomize() {
+        var letters = ['P', 'L', 'E', 'N', 'T', 'Y'];
+        var word = "";
+        for (var i = 0; i < 5; i++) {
+          word += letters[Math.floor(Math.random() * letters.length)];
+        }
+        document.getElementById("word").innerHTML = word;
+        var previousWords = document.getElementById("previous").innerHTML;
+        document.getElementById("previous").innerHTML = previousWords + "<br>" + word;
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Random Letter Generator</h1>
+    <button onclick="randomize()">Generate Word</button>
+    <p id="word"></p>
+    <h2>Previous Words:</h2>
+    <p id="previous"></p>
+  </body>
+</html>
